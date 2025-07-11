@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spot the Phish 🚩</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="screen welcome-screen">
+            <div class="welcome-content">
+                <h1 class="welcome-title">🚩 Spot the Phish</h1>
+                <p class="welcome-subtitle">Test your email security skills!</p>
+                <div class="welcome-instructions">
+                    <h3>How to Play:</h3>
+                    <ul>
+                        <li>Review each email carefully</li>
+                        <li>Click "Legit ✉️" if it's a legitimate email</li>
+                        <li>Click "Phish 🐟" if it's a phishing attempt</li>
+                        <li>Learn from detailed explanations</li>
+                        <li>Complete all 10 emails to see your score</li>
+                    </ul>
+                </div>
+                <button id="start-game" class="btn btn--primary btn--lg">Start Game</button>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen game-screen hidden">
+            <div class="game-header">
+                <div class="score-display">
+                    <span class="score-label">Score:</span>
+                    <span id="score" class="score-value">0</span>
+                    <span class="score-total">/ 10</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div id="progress" class="progress-fill"></div>
+                    </div>
+                    <span id="progress-text" class="progress-text">1 of 10</span>
+                </div>
+            </div>
+
+            <div class="email-container">
+                <div id="email-card" class="card email-card">
+                    <div class="email-header">
+                        <div class="email-field">
+                            <span class="email-label">From:</span>
+                            <span id="email-from" class="email-value"></span>
+                        </div>
+                        <div class="email-field">
+                            <span class="email-label">Subject:</span>
+                            <span id="email-subject" class="email-value"></span>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        <div id="email-content" class="email-content"></div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="legit-btn" class="btn btn--secondary btn--lg action-btn">
+                        <span class="btn-icon">✉️</span>
+                        Legit
+                    </button>
+                    <button id="phish-btn" class="btn btn--primary btn--lg action-btn">
+                        <span class="btn-icon">🐟</span>
+                        Phish
+                    </button>
+                </div>
+            </div>
+
+            <!-- Feedback Modal -->
+            <div id="feedback-modal" class="modal hidden">
+                <div class="modal-content">
+                    <div id="feedback-icon" class="feedback-icon"></div>
+                    <h3 id="feedback-title" class="feedback-title"></h3>
+                    <div id="feedback-explanation" class="feedback-explanation"></div>
+                    <div class="feedback-actions">
+                        <button id="continue-btn" class="btn btn--primary">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Screen -->
+        <div id="summary-screen" class="screen summary-screen hidden">
+            <div class="summary-content">
+                <h2 class="summary-title">🎉 Game Complete!</h2>
+                <div class="summary-score">
+                    <div class="final-score">
+                        <span id="final-score" class="score-number">0</span>
+                        <span class="score-total">/ 10</span>
+                    </div>
+                    <div id="score-percentage" class="score-percentage"></div>
+                </div>
+                <div id="score-message" class="score-message"></div>
+                <div class="summary-actions">
+                    <button id="play-again" class="btn btn--primary btn--lg">Play Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
